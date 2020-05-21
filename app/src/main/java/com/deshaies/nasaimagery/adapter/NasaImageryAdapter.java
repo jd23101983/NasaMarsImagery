@@ -59,13 +59,13 @@ public class NasaImageryAdapter extends RecyclerView.Adapter<NasaImageryAdapter.
         @BindView(R.id.mars_image)
         ImageView marsImage;
 
-        @BindView(R.id.rover_name_textview)
+        @BindView(R.id.rover_name_text_view)
         TextView roverName;
 
-        @BindView(R.id.rover_camera_textview)
+        @BindView(R.id.rover_camera_text_view)
         TextView roverCamera;
 
-        @BindView(R.id.earth_date_textview)
+        @BindView(R.id.earth_date_text_view)
         TextView earthDate;
 
         NasaImageViewHolder(@NonNull View itemView) {

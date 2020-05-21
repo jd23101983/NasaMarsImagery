@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                logDebug("************** NASA IMAGERY - SWIPE REFRESH **************");
                 refreshImageSet();
                 swipeRefreshLayout.setRefreshing(false);
             }
@@ -81,16 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayInformationRx(NasaResult nasaImageryResult) {
-
         updateRecyclerView(nasaImageryResult.getPhotos());
-
-        for (int i = 0; i < nasaImageryResult.getPhotos().size(); i++) {
-            if (nasaImageryResult.getPhotos().get(i) != null) {
-                logDebug("Image Source = " + nasaImageryResult.getPhotos().get(i).getImgSrc());
-                logDebug("Earth Date = " + nasaImageryResult.getPhotos().get(i).getEarthDate());
-                logDebug("Rover Name = " + nasaImageryResult.getPhotos().get(i).getRover().getName());
-            }
-        }
     }
 
     private void updateRecyclerView(List<Photo> imageResults) {

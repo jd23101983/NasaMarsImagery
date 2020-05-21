@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">NASA - Mars Rover Imagery</string>
     <string name="rover">Rover</string>
+    <string name="nasa_mars_rover_image">Nasa Mars Rover Image</string>
 </resources>
