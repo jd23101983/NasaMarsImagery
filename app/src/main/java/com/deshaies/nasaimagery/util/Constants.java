@@ -10,5 +10,5 @@ public class Constants {
     public static final String BASE_URL = "https://api.nasa.gov";
     public static final String URL_POSTFIX = "/mars-photos/api/v1/rovers/curiosity/photos?";
     public static final String SOL_VALUE = "1000";
-    public static final String API_KEY = "DEMO_KEY";
+    public static final String API_KEY = "uwu3ts9Zv8SIzivEK9adMeWer9osySZhVTlJi6yH";
 }

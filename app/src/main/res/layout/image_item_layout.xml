@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dimen_8dp"
@@ -16,7 +15,7 @@
         <ImageView
             android:id="@+id/mars_image"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="@dimen/dimen_130dp"
             android:scaleType="fitXY"
             android:layout_margin="@dimen/dimen_8dp"
             android:contentDescription="@string/nasa_mars_rover_image"
@@ -28,42 +27,30 @@
             android:id="@+id/rover_name_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
             android:paddingStart="@dimen/dimen_8dp"
             android:paddingEnd="@dimen/dimen_8dp"
             android:textSize="@dimen/text_24sp"
             android:textStyle="bold"
-            tools:text="@string/rover"
             app:layout_constraintTop_toBottomOf="@id/mars_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/rover_camera_text_view"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_8dp"
-            android:paddingStart="@dimen/dimen_8dp"
-            android:paddingEnd="@dimen/dimen_8dp"
-            android:textSize="@dimen/text_18sp"
-            android:textStyle="bold"
-            tools:text="Camera:"
-            app:layout_constraintTop_toBottomOf="@id/rover_name_text_view"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/earth_date_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_8dp"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
             android:paddingStart="@dimen/dimen_8dp"
             android:paddingEnd="@dimen/dimen_8dp"
             android:paddingBottom="@dimen/dimen_8dp"
-            android:textSize="@dimen/text_12sp"
+            android:textSize="@dimen/text_18sp"
             android:textStyle="bold"
-            tools:text="Date: "
-            app:layout_constraintTop_toBottomOf="@id/rover_camera_text_view"
+            app:layout_constraintTop_toBottomOf="@id/rover_name_text_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

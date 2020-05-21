@@ -38,10 +38,10 @@ public class NasaImageryAdapter extends RecyclerView.Adapter<NasaImageryAdapter.
                 .load(imageResults.get(position).getImgSrc())
                 .placeholder(R.drawable.placeholder)
                 .into(holder.marsImage);
-        String roverName = imageResults.get(position).getRover().getName() + " " + theParent.getContext().getString(R.string.rover);
-        holder.roverName.setText(roverName);
+        holder.roverNameDate.setText(theParent.getContext().getString(R.string.rover_and_date,
+                                                            imageResults.get(position).getRover().getName(),
+                                                            imageResults.get(position).getEarthDate()));
         holder.roverCamera.setText(imageResults.get(position).getCamera().getFullName());
-        holder.earthDate.setText(imageResults.get(position).getEarthDate());
     }
 
     @Override
@@ -60,13 +60,10 @@ public class NasaImageryAdapter extends RecyclerView.Adapter<NasaImageryAdapter.
         ImageView marsImage;
 
         @BindView(R.id.rover_name_text_view)
-        TextView roverName;
+        TextView roverNameDate;
 
         @BindView(R.id.rover_camera_text_view)
         TextView roverCamera;
-
-        @BindView(R.id.earth_date_text_view)
-        TextView earthDate;
 
         NasaImageViewHolder(@NonNull View itemView) {
             super(itemView);
