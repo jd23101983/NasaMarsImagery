@@ -18,6 +18,7 @@ import com.deshaies.nasaimagery.util.Constants;
 import com.deshaies.nasaimagery.util.DebugLogger;
 import com.deshaies.nasaimagery.viewmodel.NasaImageryViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -46,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         nasaImageryViewModel = ViewModelProviders.of(this).get(NasaImageryViewModel.class);
         compositeDisposable = new CompositeDisposable();
+        setupRecyclerView(new ArrayList<Photo>(0));
 
-        compositeDisposable.add(nasaImageryViewModel.getNasaImageryResultRx("1000", Constants.API_KEY).subscribe(nasaImageryResult -> {
+        compositeDisposable.add(nasaImageryViewModel.getNasaImageryResultRx(Constants.SOL_VALUE, Constants.API_KEY).subscribe(nasaImageryResult -> {
             displayInformationRx(nasaImageryResult);
         }, throwable -> {
             DebugLogger.logError(throwable);
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void refreshImageSet() {
         compositeDisposable.clear();
-        compositeDisposable.add(nasaImageryViewModel.getNasaImageryResultRx("1000", Constants.API_KEY).subscribe(nasaImageryResult -> {
+        compositeDisposable.add(nasaImageryViewModel.getNasaImageryResultRx(Constants.SOL_VALUE, Constants.API_KEY).subscribe(nasaImageryResult -> {
             displayInformationRx(nasaImageryResult);
         }, throwable -> {
             DebugLogger.logError(throwable);
@@ -92,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateRecyclerView(List<Photo> imageResults) {
+        nasaImageryAdapter.updateData(imageResults);
+    }
+
+    private void setupRecyclerView(List<Photo> imageResults) {
         nasaImageryAdapter = new NasaImageryAdapter(imageResults);
         imageResultsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         imageResultsRecyclerView.setAdapter(nasaImageryAdapter);
