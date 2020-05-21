@@ -47,7 +47,8 @@ public class NasaImageryAdapter extends RecyclerView.Adapter<NasaImageryAdapter.
                         .load(imageResults.get(position).getImgSrc())
                         .placeholder(R.drawable.placeholder)
                         .into(holder.marsImage);
-                holder.roverName.setText(imageResults.get(position).getRover().getName());
+                String roverName = imageResults.get(position).getRover().getName() + " " + theParent.getContext().getString(R.string.rover);
+                holder.roverName.setText(roverName);
                 holder.roverCamera.setText(imageResults.get(position).getCamera().getFullName());
                 holder.earthDate.setText(imageResults.get(position).getEarthDate());
             }
@@ -79,5 +80,4 @@ public class NasaImageryAdapter extends RecyclerView.Adapter<NasaImageryAdapter.
             ButterKnife.bind(this, itemView);
         }
     }
-
 }

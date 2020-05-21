@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NASA - Mars Rover Imagery</string>
+    <string name="rover">Rover</string>
 </resources>
